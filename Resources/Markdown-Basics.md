@@ -27,3 +27,16 @@ Basic Syntax Reference
 2. Another one
 
 [Link Text](https://example.com)
+
+Code block:
+Use three backticks to start and end a code block
+" ``` " (same key as the ~)
+
+
+Blockquote:
+> This is a blockquote (side carrot)
+
+Notes:
+- GitHub automatically renders .md files with formatting.
+- Markdown is a simple, readable way to create structured documents.
+
