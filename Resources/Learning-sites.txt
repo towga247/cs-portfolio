@@ -1,5 +1,5 @@
 Learning Sites:
 
+POCKET PREP << incredibly valuable asset when studying for CompTIA exams. Used for A+ and passed both cores, first try, no issues. 
 TryHackMe
 Web Security Academy
-Etc
