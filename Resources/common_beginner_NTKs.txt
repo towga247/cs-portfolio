@@ -1,0 +1,124 @@
+Beginner Reference: Common OS Differences, Gotchas, and Basics
+==============================================================
+
+This guide covers foundational differences, concepts, and tools between Windows and Linux that trip up beginners,
+with short explanations and examples you can quickly reference.
+
+--------------------------------------------------------------
+1. File Paths: Linux vs Windows
+--------------------------------------------------------------
+- Linux uses forward slashes `/`, Windows uses backslashes `\`
+- Linux paths start at `/` (root), Windows uses drive letters (e.g., `C:\`)
+- Use quotes for paths with spaces in both systems:
+  - Linux: cd "/home/user/My Documents"
+  - Windows: cd "C:\Users\User\My Documents"
+
+Examples:
+- Linux: /home/user/scripts/myscript.sh
+- Windows: C:\Users\User\scripts\myscript.bat
+
+--------------------------------------------------------------
+2. Linux File Permissions Basics
+--------------------------------------------------------------
+- Permissions are shown as: rwxr-xr-- (user/group/others)
+- `chmod` changes permissions, `chown` changes ownership
+
+Examples:
+- `chmod +x script.sh` — make file executable
+- `chmod 755 script.sh` — user: rwx, group: rx, others: rx
+- `chown user:group file.txt` — change owner and group
+
+Octal Cheat Sheet:
+- 7 = rwx
+- 6 = rw-
+- 5 = r-x
+- 4 = r--
+- 0 = ---
+--- = (4)(2)(1)
+
+--------------------------------------------------------------
+3. Redirects and Pipes
+--------------------------------------------------------------
+- `>` : redirect output to a file (overwrite)
+- `>>` : append output to a file
+- `|` : pipe output of one command into another
+- `tee` : display and save output
+
+Examples:
+- `ls > files.txt`
+- `echo "hello" >> log.txt`
+- `cat access.log | grep 403`
+- `ls -l | tee output.txt`
+
+--------------------------------------------------------------
+4. Package Management
+--------------------------------------------------------------
+Windows:
+- `winget install nmap`
+- `choco install wireshark`
+
+Linux:
+- Debian/Ubuntu: `sudo apt install nmap`
+- RedHat/Fedora: `sudo dnf install nmap`
+- Arch: `sudo pacman -S nmap`
+
+Other useful commands:
+- `apt update && apt upgrade`
+- `apt search [package]`
+- `apt remove [package]`
+
+--------------------------------------------------------------
+5. Linux Service Commands
+--------------------------------------------------------------
+Check service status, start, stop, and restart services.
+
+Examples:
+- `systemctl status ssh`
+- `systemctl start apache2`
+- `systemctl restart networking`
+- `systemctl enable ssh` — start on boot
+
+Older distros may use:
+- `service ssh status`
+
+--------------------------------------------------------------
+6. Networking Commands Quick Reference
+--------------------------------------------------------------
+Linux:
+- `ip a` — show interfaces and IPs
+- `ifconfig` — legacy tool for network interfaces
+- `ping`, `traceroute`, `netstat`, `ss`, `dig`, `nslookup`
+
+Windows:
+- `ipconfig`, `ping`, `tracert`, `netstat`, `arp -a`, `nslookup`
+
+--------------------------------------------------------------
+7. Shell Basics and Shortcuts
+--------------------------------------------------------------
+- Tab completion: auto-complete file/command names
+- `!!` — rerun last command
+- `!n` — rerun nth command in history
+- `Ctrl + R` — search command history
+- `*` — wildcard for multiple items (e.g., `ls *.txt`)
+- `?` — wildcard for one character
+
+Shell types:
+- Bash (Linux), CMD and PowerShell (Windows)
+
+--------------------------------------------------------------
+8. Environment Variables
+--------------------------------------------------------------
+Linux:
+- View: `echo $PATH`
+- Temp set: `export VAR=value`
+- Persistent: add to `~/.bashrc`
+
+Windows:
+- View: `echo %PATH%`
+- Temp set: `set VAR=value`
+- Persistent: through System Properties > Environment Variables
+
+Common Vars:
+- Linux: `$HOME`, `$USER`, `$PATH`
+- Windows: `%USERPROFILE%`, `%USERNAME%`, `%APPDATA%`, `%PATH%`
+
