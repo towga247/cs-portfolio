@@ -1,0 +1,210 @@
+Windows and Linux Command Equivalents
+=====================================
+
+1. Navigation Commands
+----------------------
+
+- **Current Directory:**
+  - Windows: `cd`
+    - Usage: `cd`
+  - Linux: `pwd`
+    - Usage: `pwd`
+
+- **List Directory Contents:**
+  - Windows: `dir`
+    - Usage: `dir`
+  - Linux: `ls`
+    - Usage: `ls`
+
+- **Change Directory:**
+  - Windows: `cd [directory]`
+    - Usage: `cd Documents`
+  - Linux: `cd [directory]`
+    - Usage: `cd Documents`
+
+2. File Management Commands
+---------------------------
+
+- **Copy Files:**
+  - Windows: `copy [source] [destination]`
+    - Usage: `copy file.txt D:\Backup\`
+  - Linux: `cp [source] [destination]`
+    - Usage: `cp file.txt /mnt/backup/`
+
+- **Move/Rename Files:**
+  - Windows: `move [source] [destination]`
+    - Usage: `move oldname.txt newname.txt`
+  - Linux: `mv [source] [destination]`
+    - Usage: `mv oldname.txt newname.txt`
+
+- **Delete Files:**
+  - Windows: `del [file]`
+    - Usage: `del unwanted.txt`
+  - Linux: `rm [file]`
+    - Usage: `rm unwanted.txt`
+
+- **Create Directory:**
+  - Windows: `mkdir [directory]`
+    - Usage: `mkdir NewFolder`
+  - Linux: `mkdir [directory]`
+    - Usage: `mkdir newfolder`
+
+- **Remove Directory:**
+  - Windows: `rmdir [directory]`
+    - Usage: `rmdir EmptyFolder`
+  - Linux: `rmdir [directory]`
+    - Usage: `rmdir emptyfolder`
+
+3. File Viewing Commands
+------------------------
+
+- **Display File Contents:**
+  - Windows: `type [file]`
+    - Usage: `type readme.txt`
+  - Linux: `cat [file]`
+    - Usage: `cat readme.txt`
+
+- **Paginate File Contents:**
+  - Windows: `more [file]`
+    - Usage: `more largefile.txt`
+  - Linux: `less [file]`
+    - Usage: `less largefile.txt`
+
+4. Search Commands
+------------------
+
+- **Find Text in Files:**
+  - Windows: `find "[text]" [file]`
+    - Usage: `find "error" logfile.txt`
+  - Linux: `grep "[text]" [file]`
+    - Usage: `grep "error" logfile.txt`
+
+5. Network Commands
+-------------------
+
+- **Display Network Configuration:**
+  - Windows: `ipconfig`
+    - Usage: `ipconfig`
+  - Linux: `ifconfig`
+    - Usage: `ifconfig`
+
+- **Test Network Connectivity:**
+  - Windows: `ping [host]`
+    - Usage: `ping example.com`
+  - Linux: `ping [host]`
+    - Usage: `ping example.com`
+
+6. Process Management Commands
+------------------------------
+
+- **List Running Processes:**
+  - Windows: `tasklist`
+    - Usage: `tasklist`
+  - Linux: `ps aux`
+    - Usage: `ps aux`
+
+- **Terminate Process:**
+  - Windows: `taskkill /PID [pid]`
+    - Usage: `taskkill /PID 1234`
+  - Linux: `kill [pid]`
+    - Usage: `kill 1234`
+
+7. Disk Usage Commands
+----------------------
+
+- **Check Disk Usage:**
+  - Windows: `chkdsk`
+    - Usage: `chkdsk C:`
+  - Linux: `df -h`
+    - Usage: `df -h`
+
+- **Check Free Space:**
+  - Windows: `dir`
+    - Usage: `dir`
+  - Linux: `du -sh [directory]`
+    - Usage: `du -sh /home/user/`
+
+8. System Information Commands
+------------------------------
+
+- **Display System Information:**
+  - Windows: `systeminfo`
+    - Usage: `systeminfo`
+  - Linux: `uname -a`
+    - Usage: `uname -a`
+
+- **Display Current User:**
+  - Windows: `whoami`
+    - Usage: `whoami`
+  - Linux: `whoami`
+    - Usage: `whoami`
+
+9. Environment Variables
+------------------------
+
+- **Set Environment Variable:**
+  - Windows: `set [variable]=[value]`
+    - Usage: `set PATH=C:\Program Files\Java\bin`
+  - Linux: `export [variable]=[value]`
+    - Usage: `export PATH=/usr/local/java/bin`
+
+- **Display Environment Variables:**
+  - Windows: `set`
+    - Usage: `set`
+  - Linux: `printenv`
+    - Usage: `printenv`
+
+10. Miscellaneous Commands
+--------------------------
+
+- **Clear Screen:**
+  - Windows: `cls`
+    - Usage: `cls`
+  - Linux: `clear`
+    - Usage: `clear`
+
+- **Echo Text:**
+  - Windows: `echo [text]`
+    - Usage: `echo Hello, World!`
+  - Linux: `echo [text]`
+    - Usage: `echo Hello, World!`
+
+- **Compare Files:**
+  - Windows: `fc [file1] [file2]`
+    - Usage: `fc file1.txt file2.txt`
+  - Linux: `diff [file1] [file2]`
+    - Usage: `diff file1.txt file2.txt`
+
+- **Disk Partition Management:**
+  - Windows: `diskpart`
+    - Usage: `diskpart`
+  - Linux: `fdisk`
+    - Usage: `fdisk /dev/sda`
+
+
+
+
+
+Notes: Windows vs Linux Quirks
+==============================
+
+- Case Sensitivity:
+  - Linux is fully case-sensitive. "Documents" ≠ "documents".
+  - Windows is case-insensitive but case-preserving. Files/folders aren't treated differently by case, but some commands (like 'cd') expect the exact case used in the name.
+
+- Changing Directories with 'cd':
+  - On Linux: 'cd documents' only works if the folder is named exactly "documents".
+  - On Windows: 'cd documents' may fail if the folder is actually named "Documents" (capital D), even though the filesystem is not case-sensitive. Always match the case to avoid errors.
+
+- Filesystem Behavior:
+  - Linux treats file names with different cases as completely separate files.
+  - Windows treats them as the same file, but retains the casing as it was originally created.
+
+- Command Case:
+  - Linux commands are case-sensitive. 'LS' is not the same as 'ls'.
+  - Windows commands are not case-sensitive. 'DIR', 'dir', and 'DiR' all work the same.
+
+Best Practice:
+--------------
+Use exact casing for file and directory names on both systems to avoid confusion, especially when switching between environments or writing scripts.
+
