@@ -1,0 +1,70 @@
+Nmap Cheat Sheet
+================
+
+Basic Scan
+----------
+nmap [target]
+- Default TCP scan on 1000 common ports
+
+Common Flags
+------------
+
+-sS      : TCP SYN scan (stealth)
+-sT      : TCP connect scan
+-sU      : UDP scan
+-sV      : Version detection
+-sC      : Run default scripts (equivalent to --script=default)
+-A       : Aggressive scan (OS detection, version, scripts, traceroute)
+-O       : OS detection
+-T[0-5]  : Timing template (0 = slowest, 5 = fastest)
+
+-p       : Specify ports
+-Pn      : Treat host as online (skip host discovery)
+--open   : Show only open ports
+-oN      : Output to normal text file
+-oX      : Output to XML
+-oG      : Output to grepable format
+-v       : Verbose output
+--script : Run specific NSE script(s)
+
+Useful Scan Examples
+--------------------
+
+Full TCP Connect Scan:
+nmap -sT -p 1-65535 [target]
+
+SYN Scan with Default Scripts and Version Detection:
+nmap -sS -sC -sV [target]
+
+Aggressive Scan:
+nmap -A [target]
+
+Scan Specific Ports:
+nmap -p 22,80,443 [target]
+
+OS Detection:
+nmap -O [target]
+
+UDP Scan on Common Ports:
+nmap -sU -p 53,67,123 [target]
+
+Skip Host Discovery (treat as online):
+nmap -Pn [target]
+
+Scan and Save Output:
+nmap -sS -sV -oN scan.txt [target]
+
+Common Port Ranges
+------------------
+
+-p-        : Scan all 65535 ports
+-p 1-1000  : Scan ports 1 to 1000
+-p 22,80   : Scan specific ports
+
+Notes
+-----
+- Use sudo for OS detection and some advanced scans
+- Timing: -T4 is a good balance of speed and stealth
+- Nmap scripts are powerful for enumeration and vuln scanning
+
+
